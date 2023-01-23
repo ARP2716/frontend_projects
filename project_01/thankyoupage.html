@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive-card-project-thankyou-page</title>
+    <link rel="stylesheet" href="/output.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <div class="max-[640px]:relative max-[640px]:top-0 max-[640px]:w-full max-[640px]:h-24 ">
+        <img class="sm:hidden" src="./images/bg-main-mobile.png" alt=""/>
+        <img class="max-[640px]:hidden" src="/images/bg-main-desktop.png" alt="" />
+      </div>
+      <div class="z-10">
+        <img
+          class="absolute left-20 sm:pt-28 pt-9 pl-20 ml-3 max-[640px]:absolute max-[640px]:top-20 max-[640px]:w-72 max-[640px]:left-0 max-[640px]:pl-0"
+          src="/images/bg-card-front.png"
+          alt=""
+        />
+        <div class="absolute sm:left-28 left-4 sm:top-36 top-32 sm:pl-20 pl-2">
+          <img class="w-9" src="/images/favicon-32x32.png" alt="" />
+        </div>
+        <div
+          class="absolute sm:left-60 left-14 sm:ml-0 ml-3 sm:top-36 top-36 sm:mt-2 -mt-1 rounded-full border-gray-400 border-2 bg-transparent sm:w-5 w-4 sm:h-5 h-4"
+        ></div>
+        <div
+        id="cardnumber"
+          class="absolute sm:left-48 left-7 sm:top-64 top-52 h-10 text-3xl bg-transparent tracking-widest text-white font-space max-[640px]:text-new"
+        >
+          0000 0000 0000 0000
+        </div>
+        <div
+        id="cardname"
+          class="absolute sm:left-48 left-7 sm:top-72 top-52 sm:mt-4 mt-9 h-10 text-sm bg-transparent tracking-widest text-white font-space max-[640px]:text-xs"
+        >
+          JANE APPLESEED
+        </div>
+        <div
+        id="mmyy"
+          class="absolute sm:left-96 left-20 ml-36 sm:top-72 top-52 sm:mt-4 mt-7 h-10 text-sm bg-transparent tracking-widest text-white font-space"
+        >
+          00/00
+        </div>
+      </div>
+      <div>
+        <img
+          class="absolute sm:left-20 left-14 sm:pt-96 pt-8 sm:pl-36 pl-4 max-[640px]:w-72"
+          src="/images/bg-card-back.png"
+          alt=""
+        />
+        <div
+        id="cardcvc"
+          class="absolute sm:left-96 left-52 sm:top-3/4 top-20 sm:ml-48 ml-18 sm:mt-11 mt-2 h-10 text-sm bg-transparent tracking-widest text-white font-space"
+        >
+          000
+        </div>
+      </div>
+
+
+
+
+
+      <div
+        class="absolute top-1/4 sm:left-1/2 left-1 sm:translate-x-3/4 translate-x-12 translate-y-1/2 text-3xl"
+      ><div class="relative left-20 mb-6">
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+      </div>
+        <div class="font-space tracking-wider ml-9">
+          <label for="thankyou">THANK YOU!</label>
+        </div>
+        <div class="font-space tracking-wider text-sm text-gray-500 ml-4">
+          We've added your card details
+        </div>
+        <div>
+          <a href="./index.html">
+            <button
+            id="btn"
+            type="submit"
+            class="mt-6 w-64 h-10 px-5 border-2 rounded-md font-space text-sm tracking-wide bg-black text-white hover:shadow-lg hover:tracking-widest"
+            >
+            Continue
+          </button>
+        </a>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+      document.getElementById("cardnumber").innerHTML =
+        localStorage.getItem("cardNum");
+      document.getElementById("cardname").innerHTML =
+        localStorage.getItem("cardName");
+      document.getElementById("mmyy").innerHTML =
+        localStorage.getItem("cardmm") + "/" + localStorage.getItem("cardyy");
+      document.getElementById("cardcvc").innerHTML =
+        localStorage.getItem("cardcvc");
+    </script>
+  </body>
+</html>
